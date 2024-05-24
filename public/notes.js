@@ -16,7 +16,7 @@ function kirimCatatan() {
     if (id == "") {
         // Tambah catatan
         axios
-            .post("https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa", {
+            .post("https://notes-zn3ixqubna-et.a.run.app/notes", {
                 judul,
                 isi,
             })
@@ -32,7 +32,7 @@ function kirimCatatan() {
             .catch((error) => console.log(error.message));
     } else {
         axios
-            .put(`https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa/${id}`, {
+            .put(`https://notes-zn3ixqubna-et.a.run.app/notes/${id}`, {
                 judul,
                 isi,
             })
@@ -51,7 +51,7 @@ function kirimCatatan() {
 
 function getCatatan() {
     axios
-      .get("https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa")
+      .get("https://notes-zn3ixqubna-et.a.run.app/notes")
       .then(({ data }) => {
         const note = document.querySelector("#note-list");
         const { data: notes } = data;
@@ -83,7 +83,7 @@ function tampilkanCatatan(note) {
         </button>
         <button
             data-id=${note.id}
-            class="btn-edit bg-red-500 text-white py-1 px-3 rounded-md 
+            class="btn-hapus bg-red-500 text-white py-1 px-3 rounded-md 
             hover:bg-red-600 focus:outline-none focus:bg-red-700">
             Delete
         </button>
@@ -98,7 +98,7 @@ function hapusCatatan() {
         btn.addEventListener("click", () => {
         const id = btn.dataset.id;
         axios
-            .delete(`https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa/${id}`)
+            .delete(`https://notes-zn3ixqubna-et.a.run.app/notes/${id}`)
             .then(() => getCatatan())
             .catch((error) => console.log(error));
         });

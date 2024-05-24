@@ -16,7 +16,7 @@ function kirimTodo() {
     if (id == "") {
         // Tambah todo
         axios
-            .post("https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa", {
+            .post("https://todos-zn3ixqubna-et.a.run.app/todos", {
                 judul,
                 deskripsi,
             })
@@ -32,7 +32,7 @@ function kirimTodo() {
             .catch((error) => console.log(error.message));
     } else {
         axios
-            .put(`https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa/${id}`, {
+            .put(`https://todos-zn3ixqubna-et.a.run.app/todos/${id}`, {
                 judul,
                 deskripsi,
             })
@@ -51,7 +51,7 @@ function kirimTodo() {
 
 function getTodo() {
     axios
-      .get("https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa")
+      .get("https://todos-zn3ixqubna-et.a.run.app/todos")
       .then(({ data }) => {
         const todo = document.querySelector("#todo-list");
         const { data: todos } = data;
@@ -83,7 +83,7 @@ function tampilkanTodo(todo) {
         </button>
         <button
             data-id=${todo.id}
-            class="btn-edit bg-red-500 text-white py-1 px-3 rounded-md 
+            class="btn-hapus bg-red-500 text-white py-1 px-3 rounded-md 
             hover:bg-red-600 focus:outline-none focus:bg-red-700">
             Delete
         </button>
@@ -98,7 +98,7 @@ function hapusTodo() {
         btn.addEventListener("click", () => {
         const id = btn.dataset.id;
         axios
-            .delete(`https://mahasiswa-llz4uecrhq-et.a.run.app/mahasiswa/${id}`)
+            .delete(`https://todos-zn3ixqubna-et.a.run.app/todos/${id}`)
             .then(() => getTodo())
             .catch((error) => console.log(error));
         });
