@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:alpine
 # Copy the content of the public directory to the Nginx html directory
 COPY public /usr/share/nginx/html
 
