@@ -1,9 +1,6 @@
-FROM nginx:alpine
+FROM nginx:latest
+# Copy the content of the public directory to the Nginx html directory
+COPY public /usr/share/nginx/html
+
+# Copy the src directory inside the html directory (if needed)
 COPY src /usr/share/nginx/html/src
-COPY public /usr/share/nginx/html/public
-COPY css /usr/share/nginx/html/public
-COPY index.html /usr/share/nginx/html/public
-COPY notes.html /usr/share/nginx/html/public
-COPY todos.html /usr/share/nginx/html/public
-COPY notes.js /usr/share/nginx/html/public
-COPY todos.js /usr/share/nginx/html/public
