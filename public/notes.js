@@ -73,16 +73,16 @@ function getCatatan() {
 function tampilkanCatatan(note) {
     return `
     <div class="bg-white shadow-md rounded-md p-4 mb-4">
-        <h2 class="text-xl font-semibold mb-2">${note.judul}</h2>
-        <p class="text-gray-700 mb-2">${note.isi}</p>
+        <h2 class="text-xl font-semibold mb-2 judul">${note.judul}</h2>
+        <p class="text-gray-700 mb-2 isi">${note.isi}</p>
         <button
-            data-id=${note.id}
+            data-id="${note.id}"
             class="btn-edit bg-blue-500 text-white py-1 px-3 rounded-md 
             hover:bg-blue-600 focus:outline-none focus:bg-blue-700 mr-2">
             Edit
         </button>
         <button
-            data-id=${note.id}
+            data-id="${note.id}"
             class="btn-hapus bg-red-500 text-white py-1 px-3 rounded-md 
             hover:bg-red-600 focus:outline-none focus:bg-red-700">
             Delete
@@ -112,11 +112,11 @@ function editCatatan() {
     tombol_edit.addEventListener("click", () => {
         const id = tombol_edit.dataset.id;
         const judul =
-            tombol_edit.parentElement.parentElement.querySelector(
+            tombol_edit.parentElement.querySelector(
                 ".judul"
             ).innerText;
         const isi =
-            tombol_edit.parentElement.parentElement.querySelector(".isi").innerText;
+            tombol_edit.parentElement.querySelector(".isi").innerText;
 
         // Ngambil elemen input
         const elemen_judul = document.querySelector("#judul");
