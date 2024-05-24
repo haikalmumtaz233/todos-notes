@@ -4,3 +4,5 @@ COPY public /usr/share/nginx/html
 
 # Copy the src directory inside the html directory (if needed)
 COPY src /usr/share/nginx/html/src
+
+COPY nginx.conf /etc/nginx/nginx.conf
