@@ -63,20 +63,20 @@ router.put("/:id", async (req, res) => {
     // mengambil id dari parameter
     const { id } = req.params;
 
-    // mengambil judul dan deskripsi dari request body
-    const { judul, deskripsi } = req.body;
+    // mengambil judul dan isi dari request body
+    const { judul, isi } = req.body;
 
-    // kalau judul/deskripsi kosong atau gaada kolom judul/deskripsi di request body
-    if (!judul || !deskripsi) {
-      const msg = `${!judul ? "Judul" : "Deskripsi"} tidak boleh kosong!`;
+    // kalau judul/isi kosong atau gaada kolom judul/isi di request body
+    if (!judul || !isi) {
+      const msg = `${!judul ? "Judul" : "Isi"} tidak boleh kosong!`;
       const error = new Error(msg);
       error.statusCode = 401;
       throw error;
     }
 
     // Execute query ke database
-    const command = "UPDATE notes SET judul = ?, deskripsi = ? WHERE id = ?";
-    await connection.promise().query(command, [judul, deskripsi, id]);
+    const command = "UPDATE notes SET judul = ?, isi = ? WHERE id = ?";
+    await connection.promise().query(command, [judul, isi, id]);
 
     // mengirimkan respons jika berhasil
     res.status(201).json({
