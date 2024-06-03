@@ -70,21 +70,29 @@ function getTodo() {
     });
 }
 
+function addStylesheet() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'styles3.css';
+    document.head.appendChild(link);
+}
+
+addStylesheet();
+
 function tampilkanTodo(todo) {
     return `
-    <div class="bg-white shadow-md rounded-md p-4 mb-4">
-        <h2 class="text-xl font-semibold mb-2 judul">${todo.judul}</h2>
-        <p class="text-gray-700 mb-2 deskripsi">${todo.deskripsi}</p>
+    <div class="todo-card">
+        <h2 class="todo-title judul">${todo.judul}</h2>
+        <p class="todo-content deskripsi">${todo.deskripsi}</p>
         <button
             data-id="${todo.id}"
-            class="btn-edit bg-blue-500 text-white py-1 px-3 rounded-md 
-            hover:bg-blue-600 focus:outline-none focus:bg-blue-700 mr-2">
+            class="btn btn-edit">
             Edit
         </button>
         <button
             data-id="${todo.id}"
-            class="btn-hapus bg-red-500 text-white py-1 px-3 rounded-md 
-            hover:bg-red-600 focus:outline-none focus:bg-red-700">
+            class="btn btn-hapus">
             Delete
         </button>
     </div>
