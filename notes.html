@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Notes</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Notes</h1>
+            <a href="index.html" class="back-button">Kembali</a>
+        </div>
+        <form class="note-form">
+            <input
+                data-id
+                id="judul"
+                type="text"
+                class="input-field"
+                placeholder="Judul"
+                required />
+            <textarea
+                data-id
+                id="isi"
+                class="textarea-field"
+                placeholder="Isi"
+                required></textarea>
+            <button
+                type="submit"
+                class="submit-button">
+                Add Note
+            </button>
+        </form>
+        <div id="note-list">
+            <!-- Notes will be displayed here -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="notes.js"></script>
+</body>
+</html>

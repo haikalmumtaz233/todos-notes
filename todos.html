@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles3.css">
+    <title>Todos</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">To Do List</h1>
+            <a href="index.html" class="back-button">Kembali</a>
+        </div>
+        <form class="todo-form">
+            <input
+                data-id
+                id="judul"
+                type="text"
+                class="input-field"
+                placeholder="Judul"
+                required />
+            <textarea
+                data-id
+                id="deskripsi"
+                class="textarea-field"
+                placeholder="Deskripsi"
+                required></textarea>
+            <button
+                type="submit"
+                class="submit-button">
+                Add Todo
+            </button>
+        </form>
+        <div id="todo-list">
+            <!-- Todos will be displayed here -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="todos.js"></script>
+</body>
+</html>
