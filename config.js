@@ -1,9 +1,9 @@
 const mysql = require("mysql2");
 
 const config = {
-  host: "34.172.140.230",
+  host: "34.122.36.119",
   user: "root",
-  password: ">m[/_fI2y#eCokmK",
+  password: "9yuDqbG>L\Qq+PFh",
   database: "todos-notes",
 };
 
