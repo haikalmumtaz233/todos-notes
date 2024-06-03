@@ -70,21 +70,29 @@ function getCatatan() {
     });
 }
 
+function addStylesheet() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'styles2.css';
+    document.head.appendChild(link);
+}
+
+addStylesheet();
+
 function tampilkanCatatan(note) {
     return `
-    <div class="bg-white shadow-md rounded-md p-4 mb-4">
-        <h2 class="text-xl font-semibold mb-2 judul">${note.judul}</h2>
-        <p class="text-gray-700 mb-2 isi">${note.isi}</p>
+    <div class="note-card">
+        <h2 class="note-title">${note.judul}</h2>
+        <p class="note-content">${note.isi}</p>
         <button
             data-id="${note.id}"
-            class="btn-edit bg-blue-500 text-white py-1 px-3 rounded-md 
-            hover:bg-blue-600 focus:outline-none focus:bg-blue-700 mr-2">
+            class="btn btn-edit">
             Edit
         </button>
         <button
             data-id="${note.id}"
-            class="btn-hapus bg-red-500 text-white py-1 px-3 rounded-md 
-            hover:bg-red-600 focus:outline-none focus:bg-red-700">
+            class="btn btn-hapus">
             Delete
         </button>
     </div>

@@ -23,6 +23,7 @@ body {
 .button-group {
     display: flex;
     gap: 1rem; /* space-x-4 */
+    justify-content: center; /* Center the buttons horizontally */
 }
 
 .button {
