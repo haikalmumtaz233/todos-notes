@@ -16,7 +16,7 @@ function kirimTodo() {
     if (id == "") {
         // Tambah todo
         axios
-            .post("https://todos-zn3ixqubna-et.a.run.app/todos", {
+            .post("https://todos-orsanl6iza-et.a.run.app/todos", {
                 judul,
                 deskripsi,
             })
@@ -32,7 +32,7 @@ function kirimTodo() {
             .catch((error) => console.log(error.message));
     } else {
         axios
-            .put(`https://todos-zn3ixqubna-et.a.run.app/todos/${id}`, {
+            .put(`https://todos-orsanl6iza-et.a.run.app/todos/${id}`, {
                 judul,
                 deskripsi,
             })
@@ -51,7 +51,7 @@ function kirimTodo() {
 
 function getTodo() {
     axios
-      .get("https://todos-zn3ixqubna-et.a.run.app/todos")
+      .get("https://todos-orsanl6iza-et.a.run.app/todos")
       .then(({ data }) => {
         const todo = document.querySelector("#todo-list");
         const { data: todos } = data;
@@ -98,7 +98,7 @@ function hapusTodo() {
         btn.addEventListener("click", () => {
         const id = btn.dataset.id;
         axios
-            .delete(`https://todos-zn3ixqubna-et.a.run.app/todos/${id}`)
+            .delete(`https://todos-orsanl6iza-et.a.run.app/todos/${id}`)
             .then(() => getTodo())
             .catch((error) => console.log(error));
         });

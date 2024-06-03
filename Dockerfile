@@ -1,8 +1,10 @@
-FROM nginx:alpine
-# Copy the content of the public directory to the Nginx html directory
-COPY public /usr/share/nginx/html
+FROM node:18-alpine
+FROM nginx:alpin
 
-# Copy the src directory inside the html directory (if needed)
-COPY src /usr/share/nginx/html/src
+WORKDIR /app
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY package.json .
+
+RUN npm install
+
+COPY . /usr/share/nginx/html

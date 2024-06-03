@@ -16,7 +16,7 @@ function kirimCatatan() {
     if (id == "") {
         // Tambah catatan
         axios
-            .post("https://notes-zn3ixqubna-et.a.run.app/notes", {
+            .post("https://notes-orsanl6iza-et.a.run.app/notes", {
                 judul,
                 isi,
             })
@@ -32,7 +32,7 @@ function kirimCatatan() {
             .catch((error) => console.log(error.message));
     } else {
         axios
-            .put(`https://notes-zn3ixqubna-et.a.run.app/notes/${id}`, {
+            .put(`https://notes-orsanl6iza-et.a.run.app/notes/${id}`, {
                 judul,
                 isi,
             })
@@ -51,7 +51,7 @@ function kirimCatatan() {
 
 function getCatatan() {
     axios
-      .get("https://notes-zn3ixqubna-et.a.run.app/notes")
+      .get("https://notes-orsanl6iza-et.a.run.app/notes")
       .then(({ data }) => {
         const note = document.querySelector("#note-list");
         const { data: notes } = data;
@@ -98,7 +98,7 @@ function hapusCatatan() {
         btn.addEventListener("click", () => {
         const id = btn.dataset.id;
         axios
-            .delete(`https://notes-zn3ixqubna-et.a.run.app/notes/${id}`)
+            .delete(`https://notes-orsanl6iza-et.a.run.app/notes/${id}`)
             .then(() => getCatatan())
             .catch((error) => console.log(error));
         });
