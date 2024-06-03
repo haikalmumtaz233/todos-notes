@@ -83,8 +83,8 @@ addStylesheet();
 function tampilkanCatatan(note) {
     return `
     <div class="note-card">
-        <h2 class="note-title">${note.judul}</h2>
-        <p class="note-content">${note.isi}</p>
+        <h2 class="note-title judul">${note.judul}</h2>
+        <p class="note-content isi">${note.isi}</p>
         <button
             data-id="${note.id}"
             class="btn btn-edit">
